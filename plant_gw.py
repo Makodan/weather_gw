@@ -86,5 +86,5 @@ while 1:
 	if radio.available():
 			plen = radio.getDynamicPayloadSize()
 			receive_payload = radio.read(plen)
-			hum, temp, soil = struct.unpack('BBH',receive_payload)
-			print('Humidity: ' +str(hum) + ' % ' +'Temperature: ' + str(temp) + ' Celsius ' +'Soil moisture: '+ str(soil) + ' ' )
+			hum, temp, soil, light = struct.unpack('BBHH',receive_payload)
+			print('Humidity: ' +str(hum) + ' % ' +'Temperature: ' + str(temp) + ' Celsius ' +'Soil moisture: '+ str(soil) + ' ' + 'Light: ' + str(light))
